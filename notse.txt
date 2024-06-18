@@ -1,0 +1,52 @@
+database design : 
+
+
+
+For user : 
+User_id
+User_name
+
+for user login
+Email
+Password
+
+for booking history
+book garda user id ni liney ani bookings ma rakhne
+
+
+
+
+
+For admin
+
+Email
+Password
+
+
+
+
+For Cars
+id
+image
+Name
+Short description
+Segment
+Rental price
+Seats
+Model
+
+
+
+
+
+For booking
+User id
+Car_name
+Car_id
+Booking date ( start and exit)
+Status
+
+
+
+
+For payment option write pay in office

@@ -1,0 +1,612 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "DM Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+nav {
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    color: orangered;
+    font-weight: bold;
+    font-size: 38px;
+    cursor: pointer;
+}
+
+.logo a img {
+    margin-top: 20px;
+}
+
+.list ul a {
+    text-decoration: none;
+    color: white;
+}
+
+.list ul a:hover {
+    /* text-decoration: underline; */
+    color: orangered;
+}
+
+.list ul {
+    display: flex;
+    font-size: 18px;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.list ul li {
+    margin-right: 30px;
+    cursor: pointer;
+
+}
+
+.list ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.list ul li a:hover {
+    color: orangered;
+}
+
+.option #sign-up a {
+    text-decoration: none;
+    color: black;
+}
+
+.option #sign-in a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.option button {
+    padding: 7px;
+    border-radius: 9px;
+    width: 100px;
+    height: 33px;
+    cursor: pointer;
+}
+
+.option button:first-child {
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+
+.option button:nth-child(2) {
+    background-color: orangered;
+    border: none;
+    color: white;
+}
+
+/* for footer  */
+footer {
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 250px;
+    background-color: #091D47;
+    color: white;
+    margin-top: 30px;
+}
+
+/* for main display page  */
+
+.des {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+.des .image {
+    position: absolute;
+    right: 30px;
+    top: 75px;
+}
+
+
+.rectangle h2 {
+    width: 25%;
+    font-weight: bolder;
+    position: absolute;
+    color: white;
+    top: 50px;
+    left: 90px;
+}
+
+.rectangle img {
+    width: 100%;
+    height: 290px;
+}
+
+.clist {
+    position: relative;
+    margin-top: 100px;
+}
+
+.lt {
+    display: inline-block;
+}
+
+.lt img {
+    height: 37px;
+}
+
+.rt {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+.rt img {
+    height: 37px;
+}
+
+.company {
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: center;
+    justify-content: center;
+}
+
+.company img {
+    height: 58px;
+}
+
+/* for best car rental deals part  */
+
+.carDeals {
+    min-height: 500px;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+.carDeals h2 {
+    margin: 38px;
+}
+
+.filter {
+    width: 1118px;
+    margin-top: 80px;
+    margin-left: 170px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.filter input {
+    box-sizing: border-box;
+    padding: 7px;
+    width: 280px;
+    border-radius: 7px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.filter input:focus {
+    outline: none;
+}
+
+.filter button {
+    background-color: transparent;
+    /* border: none; */
+    color: black;
+    padding: 7px;
+    border-radius: 9px;
+    width: 100px;
+    height: 33px;
+    cursor: pointer;
+}
+
+.filter button:hover {
+    background-color: orangered;
+    border: none;
+    color: white;
+
+}
+
+button p {
+    font-weight: 500;
+}
+
+.vmr {
+    margin-left: 600px;
+    width: 300px;
+    height: 35px;
+    cursor: pointer;
+    background-color: orangered;
+    border-radius: 9px;
+    border: none;
+
+}
+
+.vmr a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.vmr:hover {
+    padding: 10px;
+
+
+}
+
+.vmr a:hover {
+    text-decoration: 1px white underline;
+}
+
+
+.carDeals button:hover {
+    background-color: orangered;
+
+    a {
+        color: white;
+    }
+}
+
+/* for cards  */
+.cards {
+    overflow-x: scroll;
+    scrollbar-color: orangered white;
+    scrollbar-arrow-color: orangered;
+    margin-top: 40px;
+    display: flex;
+
+}
+
+
+.card {
+    margin: 30px;
+    height: 372px;
+    width: 350px;
+    border-radius: 13px;
+    box-sizing: border-box;
+    padding: 15px;
+    box-shadow: 2px 3px 5px gray;
+
+}
+
+.card:hover {
+    box-shadow: 5px 7px 9px gray;
+    cursor: pointer;
+
+}
+
+.card img {
+    height: 150px;
+    width: 250px;
+}
+
+.cars {
+    width: 1118px;
+    margin-left: 150px;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cars img {
+    height: 150px;
+    width: 250px;
+}
+
+.card h3 {
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+.features {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.features img {
+    height: 23px;
+    width: 22px;
+}
+
+.fl {
+    display: flex;
+}
+
+.tt {
+    display: flex;
+}
+
+.sc {
+    display: flex;
+}
+
+
+.details {
+    margin-top: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.rate p:first-child {
+    font-weight: bolder;
+}
+
+.rb button {
+    background-color: orangered;
+    border: none;
+    color: white;
+    padding: 7px;
+    border-radius: 9px;
+    width: 100px;
+    height: 33px;
+    cursor: pointer;
+}
+
+.rb button a {
+    text-decoration: none;
+    color: white;
+}
+
+.viewMore .vm {
+    background-color: transparent;
+    border: 1px solid orangered;
+    color: orangered;
+    padding: 7px;
+    border-radius: 9px;
+    width: 200px;
+    height: 33px;
+    cursor: pointer;
+}
+
+/* for popup form  */
+.popup1 {
+    margin: 80px auto;
+    text-align: start;
+    width: 380px;
+    padding: 20px 30px;
+    background: white;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    transition: top 0ms ease-in-out 200ms,
+        opacity 200ms ease-in-out 0ms,
+        transform 20ms ease-in-out 0ms;
+}
+
+
+
+
+
+.popup1 h2 {
+    text-align: center;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+
+.popup1 h2 span {
+    color: #ed5506;
+}
+
+.popup1 form label {
+    font-size: 14px;
+    color: #222;
+
+
+}
+
+.popup1 form input[type="email"],
+.popup1 form input[type="password"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    outline: none;
+    border: 1px solid#222;
+    border-radius: 5px;
+}
+
+.popup1 form button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    background: #ed5506;
+    color: white;
+    cursor: pointer;
+}
+
+.popup1 form a {
+    display: block;
+    text-align: right;
+    font-size: 15px;
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/*ends*/
+/*popup for sign up*/
+.popup2 {
+    margin: 40px auto;
+    width: 380px;
+    height: 580px;
+    padding: 20px 30px;
+    background: white;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    transition: top 0ms ease-in-out 200ms,
+        opacity 200ms ease-in-out 0ms,
+        transform 20ms ease-in-out 0ms;
+}
+
+
+
+
+.popup2 h2 {
+    text-align: center;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+
+.popup2 h2 span {
+    color: #ed5506;
+}
+
+.popup2 form input[type="text"],
+.popup2 form input[type="email"],
+.popup2 form input[type="tel"],
+.popup2 form input[type="password"],
+.popup2 form input[type="number"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    outline: none;
+    border: 1px solid#222;
+    border-radius: 5px;
+}
+
+.popup2 form button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    background: #ed5506;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* for car rental  */
+
+.rental {
+    position: absolute;
+    right: 15px;
+    top: 500px;
+
+
+}
+
+.rental button {
+    padding: 5px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.rental #rentnow {
+    background: #ed5506;
+    color: white;
+}
+
+.carform {
+    margin: 40px auto;
+    width: 700px;
+    padding: 20px 30px;
+    background: white;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    transition: top 0ms ease-in-out 200ms,
+        opacity 200ms ease-in-out 0ms,
+        transform 20ms ease-in-out 0ms;
+}
+
+
+
+.carform .regcls-btn {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    background: #ed5506;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.carform form input[type="text"],
+.carform form input[type="tel"] {
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    outline: none;
+    border: 1px solid#222;
+    border-radius: 5px;
+}
+
+.carform form input[type="date"] {
+    margin-top: 5px;
+    display: block;
+    width: 50%;
+    padding: 7px;
+    outline: none;
+    border: 1px solid#222;
+    border-radius: 5px;
+}
+
+.carform form button {
+
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    background: #ed5506;
+    color: white;
+
+    cursor: pointer;
+}
+
+.carform h2 {
+    text-align: center;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+
+.carform h2 span {
+    color: #ed5506;
+}
+
+.pr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pickup {
+    text-align: start;
+    width: 50%;
+}
+
+.return {
+    text-align: start;
+    width: 50%;
+}
