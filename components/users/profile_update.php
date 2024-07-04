@@ -46,7 +46,7 @@ $driving_license_no = $result['driving_license_no'];
         <input type="email" id="email" name="email" placeholder="Enter your Email Address" value="<?php echo $email; ?>" /><br />
 
         <label for="phone">Phone</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your Phone Number" maxlength="10" value="<?php echo $phone; ?>" /><br />
+        <input type="text" id="phone" name="phone" placeholder="Enter your Phone Number" minlength="10"  maxlength="10" value="<?php echo $phone; ?>" /><br />
 
         <label for="password">Password</label>
         <input type="password" id="password" name="password" minlength="8" maxlength="16" placeholder="Enter password" value="<?php echo $password; ?>" /><br />

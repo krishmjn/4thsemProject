@@ -1,18 +1,20 @@
 <?php
 include "./navbar.php";
+
+
 $id = $_SESSION['id'];
 
-$sql = "SELECT user_bookings.*, car.car_name,car.car_id ,user.full_name,user.phone,user.email,user.driving_license_no,user.user_id FROM user_bookings JOIN car ON user_bookings.car_id=car.car_id JOIN user on user_bookings.user_id=user.user_id;";
+$sql = "SELECT user_bookings.*, car.car_name, car.car_id, user.full_name, user.phone, user.email, user.driving_license_no, user.user_id 
+        FROM user_bookings 
+        JOIN car ON user_bookings.car_id = car.car_id 
+        JOIN user ON user_bookings.user_id = user.user_id 
+        WHERE user.user_id = '$id'";
 $result = mysqli_query($conn, $sql);
 
-// $data = mysqli_query($conn, $sql);
 if (!isset($_SESSION['is_login'])) {
-    header('location:./login.php');
+    header('Location: ./login.php');
     exit();
 }
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +34,7 @@ if (!isset($_SESSION['is_login'])) {
         <div class="info">
             <h2>Personal Profile</h2>
             <?php
-            $sqlu = "SELECT * from user WHERE user_id='$id'";
+            $sqlu = "SELECT * FROM user WHERE user_id='$id'";
             $user = mysqli_query($conn, $sqlu);
             $user_info = mysqli_fetch_assoc($user); ?>
             <p>Full Name : <?= $user_info['full_name']; ?><br>Phone : <?= $user_info['phone']; ?><br>Email : <?= $user_info['email']; ?></p>
@@ -59,19 +61,17 @@ if (!isset($_SESSION['is_login'])) {
             </thead>
             <tbody>
                 <?php
-
-                $sql = "SELECT user_bookings.*, car.car_name FROM user_bookings JOIN car ON user_bookings.car_id=car.car_id WHERE user_id='$id';";
+                $sql = "SELECT user_bookings.*, car.car_name FROM user_bookings JOIN car ON user_bookings.car_id = car.car_id WHERE user_bookings.user_id='$id'";
                 $booking_data = mysqli_query($conn, $sql);
                 while ($user = mysqli_fetch_assoc($booking_data)) :
-
                 ?>
                     <tr>
-                        <td><?= $user['car_name'] ?></td>
-                        <td><?= $user['pickup_date']; ?></td>
-                        <td><?= $user['return_date']; ?></td>
+                        <td><?= htmlspecialchars($user['car_name']); ?></td>
+                        <td><?= htmlspecialchars($user['pickup_date']); ?></td>
+                        <td><?= htmlspecialchars($user['return_date']); ?></td>
                         <td>
-                            <a href="./bookings_update.php?updateid=<?= $user['user_id']; ?>"><button class="Update">Update</button></a>
-                            <a href="./bookings_delete.php?deleteid=<?= $user['booking_id']; ?>&carid=<?= $user['car_id']; ?>""><button class=" Delete">Delete</button></a>
+                            <a href="./bookings_update.php?bookingid=<?= $user['booking_id']; ?>"><button class="Update">Update</button></a>
+                            <a href="./bookings_delete.php?deleteid=<?= $user['booking_id']; ?>&carid=<?= $user['car_id']; ?>"><button class="Delete">Delete</button></a>
                         </td>
                     </tr>
                 <?php endwhile; ?>
@@ -82,8 +82,7 @@ if (!isset($_SESSION['is_login'])) {
 
 </html>
 
-
-
 <?php
-include "./end.php";
+include "./end.php"
+
 ?>

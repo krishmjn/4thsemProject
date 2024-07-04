@@ -28,21 +28,21 @@ if (!empty($_POST)) {
     <form action="" method="post">
         <h2><span>RENTNOW</span><br />CARRENTAL</h2>
         <label for="name">Full name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your Full Name" /><br />
+        <input type="text" id="name" name="name" placeholder="Enter your Full Name" required /><br />
 
         <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your Email Address" /><br />
+        <input type="email" id="email" name="email" placeholder="Enter your Email Address" required/><br />
 
         <label for="phone">Phone</label>
-        <input type="text" id="phone" name="phone" placeholder="Enter your Phone Number" minlength="10" maxlength="10" /><br />
+        <input type="text" id="phone" name="phone" placeholder="Enter your Phone Number" minlength="10" maxlength="10" required/><br />
 
         <label for="password">Password</label>
 
-        <input type="password" id="password" name="password" placeholder="Enter password" minlength="8" maxlength="16" /><br />
+        <input type="password" id="password" name="password" placeholder="Enter password" minlength="8" maxlength="16" required/><br />
 
 
         <label for="license">Driving license</label>
-        <input type="text" id="license" name="license" placeholder="Enter your Driving License No."><br>
+        <input type="text" id="license" name="license" placeholder="Enter your Driving License No." required><br>
 
         <button>Sign Up</button>
     </form>
