@@ -38,10 +38,25 @@ $data = mysqli_query($conn, $sql);
                     <td><?= $result['phone']; ?></td>
                     <td><?= $result['pickup_date']; ?></td>
                     <td><?= $result['return_date'] ?></td>
-                    <td>
+                    <?php
+if ($result['booking_status'] == "pending") {
+?>
+    <td>
+        <button class="Approve"><a href="approve.php?approveid=<?= $result['booking_id']; ?>">Approve</a></button>
+    </td>
+<?php
+}
+?>
+<?php
+if ($result['booking_status'] == "approved") {
+?>
+    <td>
+        <button class="Delete"><a href="bookings_delete.php?deleteid=<?= $result['booking_id']; ?>&carid=<?= $result['car_id']; ?>">Delete</a></button>
+    </td>
+<?php
+}
+?>
 
-                        <button class="Delete"><a href="bookings_delete.php?deleteid=<?= $result['booking_id']; ?>&carid=<?= $result['car_id']; ?>">Delete</a></button>
-                    </td>
                 </tr>
             <?php endwhile; ?>
 

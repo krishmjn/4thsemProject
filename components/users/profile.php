@@ -69,10 +69,26 @@ if (!isset($_SESSION['is_login'])) {
                         <td><?= htmlspecialchars($user['car_name']); ?></td>
                         <td><?= htmlspecialchars($user['pickup_date']); ?></td>
                         <td><?= htmlspecialchars($user['return_date']); ?></td>
+
+                    <?php
+                        if($user['booking_status'] == "approved"){
+                    ?>
                         <td>
                             <a href="./bookings_update.php?bookingid=<?= $user['booking_id']; ?>"><button class="Update">Update</button></a>
                             <a href="./bookings_delete.php?deleteid=<?= $user['booking_id']; ?>&carid=<?= $user['car_id']; ?>"><button class="Delete">Delete</button></a>
                         </td>
+                        <?php
+                        }
+                        ?>
+                         <?php
+                        if($user['booking_status'] == "pending"){
+                    ?>
+                        <td>
+                        <button class="Delete">Pending</button>
+                        </td>
+                        <?php
+                        }
+                        ?>
                     </tr>
                 <?php endwhile; ?>
             </tbody>

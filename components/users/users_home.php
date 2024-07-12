@@ -36,7 +36,7 @@ if (!isset($_SESSION['is_login'])) {
 
 
         <?php
-        $sql = "SELECT car.*,fuel.fuel_capacity,seat.size,transmission.transmission_type FROM car JOIN fuel ON car.fuel_id = fuel.fuel_id JOIN seat ON car.seat_id = seat.seat_id JOIN transmission ON car.transmission_id = transmission.transmission_id;";
+        $sql = "SELECT * FROM car";
         $data = mysqli_query($conn, $sql);
         while ($result = mysqli_fetch_assoc($data)) :
 
@@ -58,7 +58,7 @@ if (!isset($_SESSION['is_login'])) {
                     <!-- seat capacity  -->
                     <div class="sc">
                         <img src="../../icons/Features/UsersThree.png" alt="">
-                        <p><?= $result['size'] ?></p>
+                        <p><?= $result['seat_capacity'] ?></p>
                     </div>
                 </div>
 

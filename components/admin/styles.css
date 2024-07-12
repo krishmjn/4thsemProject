@@ -130,22 +130,26 @@ footer {
 
 /* for users form  */
 .users {
-    display: flex;
-    justify-content: space-between;
+    margin:5px auto;
     width: 98%;
 }
 
 
 .carform {
-    height: 550px;
-    margin: 30px;
+    height: 590px;
+    margin: 30px auto;
     text-align: start;
-    width: 500px;
+    width: 550px;
     padding: 20px 30px;
     background: white;
     box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
+    overflow: auto;
+    scrollbar-color: orangered white;
+    scrollbar-arrow-color: orangered;
+    scrollbar-width: thin;
 }
+
 
 
 .update {
@@ -196,6 +200,16 @@ footer {
 
 }
 
+#fuelType{
+    padding: 6px;
+    cursor: pointer;
+    border: 1px solid#222;
+    outline: none;
+    border-radius: 9px;
+
+}
+
+
 
 
 .carform form button {
@@ -233,7 +247,7 @@ footer {
 /* for users tabe  */
 table {
     margin: 30px auto;
-    width: 90%;
+    width: 100%;
     height: 80%;
     border-collapse: collapse;
 }
@@ -285,6 +299,19 @@ tr {
     background: red;
     color: white;
     cursor: pointer;
+}
+.Approve{
+    width: 60px;
+    height: 35px;
+    border: none;
+    border-radius: 7px;
+    background: green;
+    color: white;
+    cursor: pointer;
+}
+.Approve a {
+    text-decoration: none;
+    color: white;
 }
 
 /* for cars form  */
