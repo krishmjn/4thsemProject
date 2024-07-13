@@ -1,4 +1,8 @@
+
 <!DOCTYPE html>
+
+
+
 <html lang="en">
 
 <head>
@@ -47,7 +51,8 @@
 <body>
 
     <?php
-    include "../connection.php";
+    // include "../connection.php";
+    include "./navbar.php";
     include "./header.php";
     $key = $_GET['carname'];
     $car_id = $_GET['carid'];
@@ -198,3 +203,9 @@
 </body>
 
 </html>
+
+
+<?php
+
+include "./end.php";
+?>
