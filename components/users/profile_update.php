@@ -1,6 +1,7 @@
 <?php
 include "./header.php";
-include "../connection.php";
+// include "../connection.php";
+include "./navbar.php";
 $key = $_GET['userid'];
 
 if (!empty($_POST)) {
@@ -58,3 +59,8 @@ $driving_license_no = $result['driving_license_no'];
         <button>Update</button>
     </form>
 </div>
+
+<?php
+
+include "./end.php";
+?>

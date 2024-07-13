@@ -12,7 +12,7 @@ if (!empty($_POST)) {
     $rate = $_POST['rate'];
     $engine = $_POST['engine'];
     $fuel_type = $_POST['fuelType'];
-    $quantity = $_POST['quantity'];
+    // $quantity = $_POST['quantity'];
     $modal = $_POST['modal'];
     $mileage = $_POST['mileage'];
 
@@ -36,7 +36,7 @@ if (!empty($_POST)) {
             rate='$rate',
             engine='$engine', 
             fuelType='$fuel_type', 
-            Quantity='$quantity', 
+            -- Quantity='$quantity', 
             modal='$modal', 
             mileage='$mileage' 
             $image_sql 
@@ -89,13 +89,13 @@ if (!$result) {
                 <option value="Hybrid" <?= $result['fuelType'] == "Hybrid" ? "selected" : "" ?>>Hybrid</option>
             </select> 
 
-            <label for="quantity">Quantity</label>
+            <!-- <label for="quantity">Quantity</label>
             <select name="quantity" id="fuelType">
                 <option value="1" <?= $result['Quantity'] == "1" ? "selected" : "" ?>>1</option>
                 <option value="2" <?= $result['Quantity'] == "2" ? "selected" : "" ?>>2</option>
                 <option value="3" <?= $result['Quantity'] == "3" ? "selected" : "" ?>>3</option>
                 <option value="4" <?= $result['Quantity'] == "4" ? "selected" : "" ?>>4</option>
-            </select> <br><br>
+            </select> <br><br> -->
 
             <label for="modal">Modal Number</label>
             <input type="text" id="modal" name="modal" value="<?= $result['modal'] ?>" required /><br />

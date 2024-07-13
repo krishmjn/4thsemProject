@@ -73,7 +73,7 @@ if (!$data) {
                 <th>Model</th>
                 <th>Mileage</th>
                 <th>Fuel Type</th>
-                <th>Quantity</th>
+                <!-- <th>Quantity</th> -->
                 <th>Img</th>
                 <th>Actions</th>
             </tr>
@@ -95,7 +95,7 @@ if (!$data) {
                     <td><?= $result['modal']; ?></td>
                     <td><?= $result['mileage']; ?></td>
                     <td><?= $result['fuelType']; ?></td>
-                    <td><?= $result['Quantity']; ?></td>
+                    <!-- <td><?= $result['Quantity']; ?></td> -->
                     <td><img src="./uploads/<?= $result['image'] ?>" height="50" width="80" alt=""></td>
                     <td>
                         <button class="Update"><a href="update.php?updateid=<?= $result['car_id']; ?>">Update</a></button>

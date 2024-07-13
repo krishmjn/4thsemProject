@@ -16,7 +16,7 @@ if (!empty($_POST)) {
     $rate = $_POST['rate'];
     $engine = $_POST['engine'];
     $fue = $_POST['fuelType'];
-    $qty = $_POST['quantity'];
+    // $qty = $_POST['quantity'];
     $modal = $_POST['modal'];
     $mileage = $_POST['mileage'];
 
@@ -29,8 +29,8 @@ if (!empty($_POST)) {
         move_uploaded_file($tmp, $path . $image);
     }
 
-    $sql = "INSERT INTO car(car_name, fuel_capacity, transmission_type, seat_capacity, rate, image, engine, modal, mileage, fuelType, Quantity)
-            VALUES('$car_name', '$fuel_litre', '$transmission_type', '$seat_capacity', '$rate', '$image', '$engine', '$modal', '$mileage', '$fue', '$qty')";
+    $sql = "INSERT INTO car(car_name, fuel_capacity, transmission_type, seat_capacity, rate, image, engine, modal, mileage, fuelType)
+            VALUES('$car_name', '$fuel_litre', '$transmission_type', '$seat_capacity', '$rate', '$image', '$engine', '$modal', '$mileage', '$fue')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         echo "Data inserted";
@@ -66,13 +66,13 @@ if (!empty($_POST)) {
                 <option value="Hybrid">Hybrid</option>
             </select>
 
-            <label for="cars">Quantity : </label>
+            <!-- <label for="cars">Quantity : </label>
             <select name="quantity" id="quantity">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
-            </select> <br><br>
+            </select> <br><br> -->
 
             <label for="modal">Modal Number</label>
             <input type="text" id="modal" name="modal" placeholder="Enter Modal Number" required /><br />
