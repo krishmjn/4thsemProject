@@ -30,7 +30,7 @@ if (!empty($_POST)) {
 <div class="popup1">
 
     <form action="" method="post">
-        <h2><span>RENTNOW</span><br />CARRENTAL</h2>
+        <h2><span>JHOLA</span></h2>
         <br /><br />
 
         <label for="Email">Email Address</label>

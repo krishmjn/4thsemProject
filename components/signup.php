@@ -7,10 +7,9 @@ if (!empty($_POST)) {
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $password = $_POST['password'];
-    $driving_license_no = $_POST['license'];
 
-    $sql = "INSERT INTO user(full_name,email,phone,password,driving_license_no)
-    VALUES('$full_name','$email','$phone','$password','$driving_license_no')";
+    $sql = "INSERT INTO user(full_name,email,phone,password)
+    VALUES('$full_name','$email','$phone','$password')";
 
     $res = mysqli_query($conn, $sql);
 
@@ -26,7 +25,7 @@ if (!empty($_POST)) {
 <div class="popup2">
 
     <form action="" method="post">
-        <h2><span>RENTNOW</span><br />CARRENTAL</h2>
+        <h2><span>JHOLA</span><br /></h2>
         <label for="name">Full name</label>
         <input type="text" id="name" name="name" placeholder="Enter your Full Name" required /><br />
 
@@ -41,8 +40,7 @@ if (!empty($_POST)) {
         <input type="password" id="password" name="password" placeholder="Enter password" minlength="8" maxlength="16" required/><br />
 
 
-        <label for="license">Driving license</label>
-        <input type="text" id="license" name="license" placeholder="Enter your Driving License No." required><br>
+        
 
         <button>Sign Up</button>
     </form>

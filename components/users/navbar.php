@@ -6,14 +6,16 @@ include "../connection.php";
 
 <nav>
     <div class="logo">
-        <a href="./users_home.php"><img src="../../icons/logo.svg" height="100px" width="180px" alt=""></a>
+        <a href="./users_home.php"><img src="../../icons/company name/logo.svg" height="70px" width="180px" alt=""></a>
         <!-- <h3>CARRENTAL</h3> -->
     </div>
 
     <div class="list">
         <ul>
             <li><a href="./users_home.php">Home</a></li>
-            <li><a target="_blank" href="./carlisting.php">Car Listing</a></li>
+            <li><a target="_blank" href="./carlisting.php">Collections</a></li>
+            <li><a href="./users_home.php">About Us</a></li>
+            <li><a target="_blank" href="./carlisting.php">Contact</a></li>
         </ul>
     </div>
 

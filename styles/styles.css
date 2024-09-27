@@ -8,11 +8,11 @@
 
 
 nav {
-    padding: 30px;
+    padding: 10px;
     display: flex;
     justify-content: space-around;
     width: 100%;
-    height: 80px;
+    height: 60px;
     text-align: center;
     align-items: center;
     position: sticky;
@@ -21,13 +21,39 @@ nav {
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+ul li ul.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 42%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+ul li ul.dropdown-menu li {
+    display: block;
+}
+
+ul li ul.dropdown-menu li a {
+    padding: 10px;
+    display: block;
+    width: 150px;
+}
+
+ul li:hover ul.dropdown-menu {
+    display: block;
+}
 
 .logo {
     color: orangered;
     font-weight: bold;
-    font-size: 38px;
+    font-size: 28px;
     cursor: pointer;
 }
+
 
 .logo a img {
     margin-top: 20px;
@@ -91,7 +117,7 @@ nav {
 }
 
 .option button:nth-child(2) {
-    background-color: orangered;
+    background-color: black;
     border: none;
     color: white;
 }
@@ -106,7 +132,7 @@ footer {
     text-align: center;
     width: 100%;
     height: 250px;
-    background-color: #091D47;
+    background-color: black;
     color: white;
     margin-top: 30px;
 }
@@ -116,23 +142,26 @@ footer {
 .des {
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 700px;
+    align-items: center;
+    text-align: center;
 }
 
-.des .image {
-    position: absolute;
-    right: 30px;
-    top: 75px;
+.des .image img{
+height: 700px;
+width: 700px;
+position: absolute;
+left: 300px;
 }
 
 
 .rectangle h2 {
     width: 25%;
     font-weight: bolder;
+    font-size: 3rem;
     position: absolute;
-    color: white;
-    top: 50px;
-    left: 90px;
+    top: 100px;
+    right: 400px;
 }
 
 .rectangle img {
@@ -270,25 +299,37 @@ button p {
 }
 
 /* for cards  */
+.collections{
+    height: 100%;
+    margin: 30px auto;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+}
+.collection{
+    height: 100%;
+    margin: 30px auto;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+}
 .cards {
-    overflow-x: scroll;
-    scrollbar-color: orangered white;
-    scrollbar-arrow-color: orangered;
-    margin-top: 40px;
-    display: flex;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 
 .card {
+    align-items: center;
+    text-align: center;
     margin: 30px;
-    height: 372px;
-    width: 350px;
+    height: 400px;
+    width: 300px;
     border-radius: 13px;
     box-sizing: border-box;
     padding: 15px;
-    box-shadow: 2px 3px 5px gray;
-
+    border: 1px solid gray;
 }
 
 .card:hover {
@@ -298,8 +339,11 @@ button p {
 }
 
 .card img {
-    height: 150px;
+    height: 280px;
     width: 250px;
+}
+.card p{
+    font-weight: 400;
 }
 
 .cars {
@@ -408,7 +452,8 @@ button p {
 }
 
 .popup1 h2 span {
-    color: #ed5506;
+    color: black
+    ;
 }
 
 .popup1 form label {
@@ -434,7 +479,7 @@ button p {
     height: 40px;
     border: none;
     border-radius: 7px;
-    background: #ed5506;
+    background: black;
     color: white;
     cursor: pointer;
 }
@@ -451,9 +496,9 @@ button p {
 /*ends*/
 /*popup for sign up*/
 .popup2 {
-    margin: 40px auto;
+    margin: 160px auto;
     width: 380px;
-    height: 580px;
+    height: 500px;
     padding: 20px 30px;
     background: white;
     box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
@@ -473,7 +518,7 @@ button p {
 }
 
 .popup2 h2 span {
-    color: #ed5506;
+    color: black;
 }
 
 .popup2 form input[type="text"],
@@ -495,7 +540,7 @@ button p {
     height: 40px;
     border: none;
     border-radius: 7px;
-    background: #ed5506;
+    background: black;
     color: white;
     cursor: pointer;
 }
@@ -521,7 +566,7 @@ button p {
 }
 
 .rental #rentnow {
-    background: #ed5506;
+    background: black;
     color: white;
 }
 

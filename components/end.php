@@ -5,7 +5,7 @@ include "./header.php"
 
 <footer>
     <div class="main">
-        <p>RENTNOW</p>
+        <p>JHOLA</p>
     </div>
     <div class="logo">
 
@@ -17,13 +17,19 @@ include "./header.php"
                 <li>Home</li>
             </a>
             <a href="./signin.php">
-                <li>Car Listing</li>
+                <li>Collections</li>
+            </a>
+            <a href="./index.php">
+                <li>About Us</li>
+            </a>
+            <a href="./signin.php">
+                <li>Contact</li>
             </a>
 
         </ul>
     </div>
     <div class="copyright">
-        <p>All right reserved @RentNow 2024</p>
+        <p>All right reserved @JHOLA 2024</p>
     </div>
 </footer>
 

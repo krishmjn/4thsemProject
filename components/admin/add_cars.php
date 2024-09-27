@@ -9,16 +9,15 @@ if (!isset($_SESSION['is_login'])) {
 }
 
 if (!empty($_POST)) {
-    $car_name = $_POST['name'];
-    $fuel_litre = $_POST['fuel_capacity'];
-    $transmission_type = $_POST['transmission'];
-    $seat_capacity = $_POST['seat'];
-    $rate = $_POST['rate'];
-    $engine = $_POST['engine'];
-    $fue = $_POST['fuelType'];
-    // $qty = $_POST['quantity'];
-    $modal = $_POST['modal'];
-    $mileage = $_POST['mileage'];
+    $bag_name = $_POST['name'];
+    $fabric=$_POST['fabric'];
+    $volume=$_POST['volume'];
+    $category=$_POST['category'];
+    $price=$_POST['price'];
+    $stock=$_POST['stock'];
+    $colour=$_POST['colour'];
+
+    
 
     $image = '';
 
@@ -29,8 +28,8 @@ if (!empty($_POST)) {
         move_uploaded_file($tmp, $path . $image);
     }
 
-    $sql = "INSERT INTO car(car_name, fuel_capacity, transmission_type, seat_capacity, rate, image, engine, modal, mileage, fuelType)
-            VALUES('$car_name', '$fuel_litre', '$transmission_type', '$seat_capacity', '$rate', '$image', '$engine', '$modal', '$mileage', '$fue')";
+    $sql = "INSERT INTO bags(name, price, category, colour, stock, fabric, volume)
+            VALUES('$bag_name', '$price', '$category', '$colour', '$stock', '$fabric', '$volume')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         echo "Data inserted";
@@ -44,54 +43,38 @@ if (!empty($_POST)) {
 <section class="carform">
         <div class="regcls-btn">&times;</div>
         <form action="" method="post" enctype="multipart/form-data">
-            <h2><span>Add</span>Cars</h2>
+            <h2><span>Add</span>Bags</h2>
 
-            <label for="name">Car name</label>
-            <input type="text" id="name" name="name" placeholder="Enter Car Name" required /><br />
+            <label for="name">Bag name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Bag Name" required /><br />
 
-            <label for="fuel_capacity">Fuel Capacity</label>
-            <input type="text" id="fuel_capacity" name="fuel_capacity" placeholder="Enter Fuel Capacity Of Your Car" required /><br />
+            <label for="fabric">Fabric</label>
+            <input type="text" id="fuel_capacity" name="fabric" placeholder="Enter Fabric Used" required /><br />
 
-            <label for="cars">Transmission Type : </label>
-            <select name="transmission" id="transmission">
-                <option value="Automatic">Automatic</option>
-                <option value="Manual">Manual</option>
+            <label for="cars">Category : </label>
+            <select name="category" id="transmission">
+                <option value="Backpacks">Backpacks</option>
+                <option value="Totes">Totes</option>
+                <option value="HipPacks">Hip Packs</option>
+
             </select> <br><br>
 
-            <label for="cars">Fuel Type : </label>
-            <select name="fuelType" id="fuelType">
-                <option value="Diesel">Diesel</option>
-                <option value="Petrol">Petrol</option>
-                <option value="Ev">Ev</option>
-                <option value="Hybrid">Hybrid</option>
-            </select>
+            <label for="rate">Price</label>
+            <input type="text" id="rate" name="price" placeholder="Enter PRice" required /><br />
 
-            <!-- <label for="cars">Quantity : </label>
-            <select name="quantity" id="quantity">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select> <br><br> -->
+            <label for="rate">Stock</label>
+            <input type="text" id="rate" name="stock" placeholder="Enter Stocks Available" required /><br />
+            <label for="rate">Colour</label>
+            <input type="text" id="rate" name="colour" placeholder="Enter Stocks Available" required /><br />
+            <label for="rate">Volume</label>
+            <input type="text" id="rate" name="volume" placeholder="Enter Stocks Available" required /><br />
 
-            <label for="modal">Modal Number</label>
-            <input type="text" id="modal" name="modal" placeholder="Enter Modal Number" required /><br />
+           
 
-            <label for="engine">Engine Displacement</label>
-            <input type="text" id="engine" name="engine" placeholder="Enter Engine Displacement" required /><br />
-
-            <label for="mileage">Mileage</label>
-            <input type="text" id="mileage" name="mileage" placeholder="Enter Mileage" required /><br />
-
-            <label for="seat">Seat Capacity</label>
-            <input type="text" id="seat" name="seat" placeholder="Enter Seat Capacity" required /><br />
-
-            <label for="rate">Rate</label>
-            <input type="text" id="rate" name="rate" placeholder="Enter Per Day Rate" required /><br />
-
+            
             <label for="img">Image</label>
             <input type="file" id="img" name="image" placeholder="Choose an image" required /><br />
 
-            <button>ADD CAR</button>
+            <button>ADD BAG</button>
         </form>
     </section>

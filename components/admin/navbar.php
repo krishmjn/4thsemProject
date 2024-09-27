@@ -4,7 +4,7 @@ include "./header.php"
 ?>
 <nav>
     <div class="logo">
-        <a href="./index.php"><img src="../../icons/logo.svg" height="100px" width="180px" alt=""></a>
+        <a href="./index.php"><img src="../../icons/company name/logo.svg" height="100px" width="180px" alt=""></a>
 
         <!-- <h3>CARRENTAL</h3> -->
     </div>
