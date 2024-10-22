@@ -39,7 +39,7 @@ $driving_license_no = $result['driving_license_no'];
 <div class="popup2">
 
     <form action="" method="post">
-        <h2><span>RENTNOW</span><br />CARRENTAL</h2>
+        <h2><span>JHOLA</h2>
         <label for="name">Full name</label>
         <input type="text" id="name" name="name" value="<?php echo $full_name; ?>" placeholder="Enter your Full Name" /><br />
 
@@ -53,8 +53,7 @@ $driving_license_no = $result['driving_license_no'];
         <input type="password" id="password" name="password" minlength="8" maxlength="16" placeholder="Enter password" value="<?php echo $password; ?>" /><br />
 
 
-        <label for="license">Driving license</label>
-        <input type="text" id="license" name="license" placeholder="Enter your Driving License No." value="<?php echo $driving_license_no; ?>"><br>
+
 
         <button>Update</button>
     </form>

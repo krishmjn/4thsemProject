@@ -1,104 +1,101 @@
 <?php
 include "./navbar.php";
-
-
-$id = $_SESSION['id'];
-
-$sql = "SELECT user_bookings.*, car.car_name, car.car_id, user.full_name, user.phone, user.email, user.driving_license_no, user.user_id 
-        FROM user_bookings 
-        JOIN car ON user_bookings.car_id = car.car_id 
-        JOIN user ON user_bookings.user_id = user.user_id 
-        WHERE user.user_id = '$id'";
-$result = mysqli_query($conn, $sql);
-
+include "./header.php";
+// Check if user is logged in
 if (!isset($_SESSION['is_login'])) {
     header('Location: ./login.php');
     exit();
 }
+
+$id = $_SESSION['id'];
+// Fetch user's bag orders
+$sql_orders = "SELECT customer_ordesrs.order_id, customer_ordesrs.quantity, bags.id AS bag_id, 
+                      user.full_name, user.phone, bags.price
+               FROM customer_ordesrs
+               JOIN bags ON customer_ordesrs.bag_id = bags.id
+               JOIN user ON customer_ordesrs.user_id = user.user_id
+               WHERE user.user_id = '$id'";
+
+$data_orders = mysqli_query($conn, $sql_orders);
+if (!$data_orders) {
+    // Display the MySQL error message
+    echo "Error executing query: " . mysqli_error($conn);
+    exit();
+}
+
+// Fetch user profile information
+$sql_profile = "SELECT full_name, phone FROM user WHERE user_id = '$id'";
+$data_profile = mysqli_query($conn, $sql_profile);
+$user_profile = mysqli_fetch_assoc($data_profile);
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User-Profile</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+<div class="container">
+<h1>Manage your account</h1>
 
-<body>
+<div class="profile">
+    <div class="info">
+        <h2>Personal Profile</h2>
+        <?php
+        $sqlu = "SELECT * FROM user WHERE user_id='$id'";
+        $user = mysqli_query($conn, $sqlu);
+        
+        $user_info = mysqli_fetch_assoc($user); ?>
+        <p>Full Name : <?= $user_info['full_name']; ?><br>Phone : <?= $user_info['phone']; ?><br>Email : <?= $user_info['email']; ?><br>Password : <?= $user_info['password']; ?></p>
+    </div>
 
-    <h1>Manage your account</h1>
+</div>
+<div class="action">
+    <a href="./profile_update.php?userid=<?= $user_info['user_id']; ?>"><button class="Update">Update</button></a>
+</div>
 
-    <div class="profile">
-        <div class="info">
-            <h2>Personal Profile</h2>
+    <h1 class="heading">Your Bag Orders</h1>
+    <table border="1px solid black">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Bag ID</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
             <?php
-            $sqlu = "SELECT * FROM user WHERE user_id='$id'";
-            $user = mysqli_query($conn, $sqlu);
-            $user_info = mysqli_fetch_assoc($user); ?>
-            <p>Full Name : <?= $user_info['full_name']; ?><br>Phone : <?= $user_info['phone']; ?><br>Email : <?= $user_info['email']; ?></p>
-        </div>
-        <div class="document">
-            <h2>Document</h2>
-            <p>License No : <?= $user_info['driving_license_no']; ?></p>
-        </div>
-    </div>
-    <div class="action">
-        <a href="./profile_update.php?userid=<?= $user_info['user_id']; ?>"><button class="Update">Update</button></a>
-    </div>
-
-    <div class="history">
-        <table border="1px solid black">
-            <h2>Recent Rental Cars</h2>
-            <thead>
-                <tr>
-                    <th>Car Name</th>
-                    <th>Rent Date</th>
-                    <th>Return Date</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $sql = "SELECT user_bookings.*, car.car_name FROM user_bookings JOIN car ON user_bookings.car_id = car.car_id WHERE user_bookings.user_id='$id'";
-                $booking_data = mysqli_query($conn, $sql);
-                while ($user = mysqli_fetch_assoc($booking_data)) :
-                ?>
+            // Check if there are orders to display
+            if (mysqli_num_rows($data_orders) > 0) {
+                while ($result = mysqli_fetch_assoc($data_orders)) {
+                    // Calculate total price
+                    $total_price = $result['price'] * $result['quantity'];
+                    ?>
                     <tr>
-                        <td><?= htmlspecialchars($user['car_name']); ?></td>
-                        <td><?= htmlspecialchars($user['pickup_date']); ?></td>
-                        <td><?= htmlspecialchars($user['return_date']); ?></td>
-
-                    <?php
-                        if($user['booking_status'] == "approved"){
-                    ?>
+                        <td><?= htmlspecialchars($result['order_id']); ?></td>
+                        <td><?= htmlspecialchars($result['full_name']); ?></td>
+                        <td><?= htmlspecialchars($result['bag_id']); ?></td>
+                        <td><?= htmlspecialchars($result['price']); ?></td>
+                        <td><?= htmlspecialchars($result['quantity']); ?></td>
+                        <td><?= htmlspecialchars($total_price); ?></td>
+                       
                         <td>
-                            <a href="./bookings_update.php?bookingid=<?= $user['booking_id']; ?>"><button class="Update">Update</button></a>
-                            <a href="./bookings_delete.php?deleteid=<?= $user['booking_id']; ?>&carid=<?= $user['car_id']; ?>"><button class="Delete">Delete</button></a>
+                            <button class="Delete">
+                                <a href="order_delete.php?order_id=<?= $result['order_id']; ?>">Delete</a>
+                            </button>
                         </td>
-                        <?php
-                        }
-                        ?>
-                         <?php
-                        if($user['booking_status'] == "pending"){
-                    ?>
-                        <td>
-                        <button class="Delete">Pending</button>
-                        </td>
-                        <?php
-                        }
-                        ?>
                     </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
-    </div>
-</body>
+                    <?php
+                }
+            } else {
+                echo "<tr><td colspan='8'>No orders found.</td></tr>";
+            }
+            ?>
+        </tbody>
+    </table>
 
-</html>
+    
+    
+</div>
 
 <?php
-include "./end.php"
-
+include "./end.php";
 ?>

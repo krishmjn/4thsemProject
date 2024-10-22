@@ -71,7 +71,7 @@ nav {
     width: 100px;
     height: 33px;
     cursor: pointer;
-    background-color: orangered;
+    background-color: black;
     border: none;
     color: white;
 
@@ -99,7 +99,7 @@ footer {
     text-align: center;
     width: 100%;
     height: 220px;
-    background-color: #091D47;
+    background-color: black;
     color: white;
     margin-top: 30px;
     box-sizing: border-box;
@@ -131,12 +131,12 @@ footer {
 /* for users form  */
 .users {
     margin:5px auto;
-    width: 98%;
+    width: 90%;
 }
 
 
 .carform {
-    height: 590px;
+    height: 770px;
     margin: 30px auto;
     text-align: start;
     width: 550px;
@@ -145,8 +145,8 @@ footer {
     box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     overflow: auto;
-    scrollbar-color: orangered white;
-    scrollbar-arrow-color: orangered;
+    scrollbar-color: black white;
+    scrollbar-arrow-color: black;
     scrollbar-width: thin;
 }
 
@@ -217,7 +217,7 @@ footer {
     height: 40px;
     border: none;
     border-radius: 7px;
-    background: #ed5506;
+    background: black;
     color: white;
     cursor: pointer;
 }
@@ -247,7 +247,7 @@ footer {
 /* for users tabe  */
 table {
     margin: 30px auto;
-    width: 100%;
+    width: 90%;
     height: 80%;
     border-collapse: collapse;
 }
@@ -256,11 +256,11 @@ th,
 td {
     padding: 10px;
     text-align: left;
-    border-bottom: 2px solid #FF5733;
+    border-bottom: 2px solid black;
 }
 
 th {
-    background-color: #FF5733;
+    background-color: black;
 
     color: white;
 }
@@ -268,7 +268,7 @@ th {
 
 
 tr {
-    background-color: #FFE4B2;
+    background-color: white;
 }
 
 .Update {
@@ -341,7 +341,7 @@ tr {
 }
 
 .popup1 h2 span {
-    color: #ed5506;
+    color: black;
 }
 
 .popup1 form label {
@@ -367,7 +367,7 @@ tr {
     height: 40px;
     border: none;
     border-radius: 7px;
-    background: #ed5506;
+    background: black;
     color: white;
     cursor: pointer;
 }

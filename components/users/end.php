@@ -3,7 +3,7 @@ include "./header.php"
 ?>
 <footer>
     <div class="main">
-        <p>RENTNOW</p>
+        <p>JHOLA</p>
     </div>
     <div class="logo">
 
@@ -11,16 +11,20 @@ include "./header.php"
     </div>
     <div class="list">
         <ul>
-            <a href="./users_home.php">
+        <a href="./index.php">
                 <li>Home</li>
             </a>
-            <a href="./carlisting.php">
-                <li>Car Listing</li>
+            <a href="./collections.php">
+                <li>Collections</li>
             </a>
+            <a href="../about.php">
+                <li>About Us</li>
+            </a>
+          
 
         </ul>
     </div>
     <div class="copyright">
-        <p>All right reserved @RentNow 2024</p>
+        <p>All right reserved @JHOLA 2024</p>
     </div>
 </footer>

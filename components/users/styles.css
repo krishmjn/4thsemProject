@@ -22,7 +22,7 @@ nav {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .rentContainer{
-    width: 90%;
+    width: 80%;
     margin:100px auto;
     display: flex;
     justify-content: space-between;
@@ -30,24 +30,72 @@ nav {
     
 }
 .carDetails {
+    margin: auto;
     padding: 20px;
     width: 700px;
     display: flex;
-    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.1);
+
 
 }
+#quant{
+    text-align: center;
+    font-weight: bold;
+
+}
+.detailss{
+    margin-top: 100px;
+}
 .carDetails .img img{
-    height: 200px;
-    width: 330px;
+    height: 400px;
+    width: 370px;
 }
 .det{
     display: flex;
     margin-bottom: 5px;
 }
+.det label{
+    font-weight: bold;
+    margin-right: 10px;
+}
 
 .det img{
     height: 20px;
     width: 21px;
+}
+.add{
+    padding: 5px 10px !important;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.sub{
+    border-radius: 4px;
+    padding: 5px 10px !important;
+    border: none;
+    background-color: gray;
+    color: black;
+    cursor: pointer;
+}
+.label{
+    width: 28px;
+    height: 25px;
+    border: 1px solid black;
+}
+.carts button{
+    margin-top: 10px;
+    padding: 5px 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.carts button a{
+    color: white;
+    text-decoration: none;
 }
 
 
@@ -83,7 +131,7 @@ nav {
 }
 
 .list ul li a:hover {
-    color: orangered;
+    color: white;
 }
 
 /* .dropdown p {
@@ -211,10 +259,24 @@ table {
 }
 
 .history h2 {
+    
     margin: 30px auto;
     width: 90%;
-    height: 80%;
 
+}
+.ck{
+    width: 90px;
+    height: 35px;
+    border: none;
+    border-radius: 7px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    padding:7px 10px ;
+}
+.ck a{
+    color: white;
+    text-decoration: none;
 }
 
 th,
@@ -245,6 +307,34 @@ tr {
     color: white;
     cursor: pointer;
 }
+.carousel-container {
+    width: 500px; /* Width of the images */
+    height: 600px; /* Height of the images */
+    overflow: hidden; /* Hide anything outside the container */
+    position: relative;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .carousel-slide img {
+    width: 500px; /* Image width */
+    height: 600px; /* Image height */
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .bags{
+    display: flex;
+    justify-content: space-between;
+  }
+  .checkout{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+  }
 
 .Delete {
     width: 60px;
@@ -254,6 +344,10 @@ tr {
     background: red;
     color: white;
     cursor: pointer;
+}
+.Delete a{
+    color: white;
+    text-decoration: none;
 }
 
 .action .Update {

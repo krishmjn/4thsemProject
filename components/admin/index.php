@@ -11,8 +11,3 @@ if (!isset($_SESSION['is_login'])) {
 ?>
 <h1 class="container heading">Welcome Admin</h1>
 
-<?php
-
-include "./end.php"
-
-?>

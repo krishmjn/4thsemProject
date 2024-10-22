@@ -24,7 +24,7 @@ if (!isset($_SESSION['is_login'])) {
 
 <div class="container">
     <h1 class="heading">Users</h1>
-    <table border="1px solid black">
+    <table border="1px solid black" style="width: 80%; margin: auto;">
         <thead>
             <tr>
                 <th>ID</th>
@@ -61,5 +61,3 @@ if (!isset($_SESSION['is_login'])) {
         </tbody>
     </table>
 </div>
-
-<?php include "./end.php"; ?>

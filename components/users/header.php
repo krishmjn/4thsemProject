@@ -7,7 +7,7 @@
     <title>Jhola</title>
     <link rel="stylesheet" href="./styles.css">
  <link rel="stylesheet" href="../../styles/styles.css">
- 
+ <link rel="icon" href="../../icons/logo4" />
 
     <link rel="stylesheet" href="../../styles/styles.css" rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

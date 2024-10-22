@@ -109,6 +109,22 @@ ul li:hover ul.dropdown-menu {
     height: 33px;
     cursor: pointer;
 }
+.about{
+    height: 550px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.about h1{
+    margin-top: 280px;
+}
+.about img{
+    height: 550px;
+    width: 500px;
+}
 
 .option button:first-child {
     background-color: transparent;
@@ -140,28 +156,69 @@ footer {
 /* for main display page  */
 
 .des {
+    display: flex;
+    justify-content: space-around;
     position: relative;
     width: 100%;
     height: 700px;
     align-items: center;
-    text-align: center;
+    text-align: start;
 }
 
-.des .image img{
+/* .des .image img{
 height: 700px;
 width: 700px;
-position: absolute;
-left: 300px;
+object-fit: cover;
+
+} */
+.orange{
+    color: orangered;
+}
+.mocha{
+    background-color: rgb(201, 73, 73);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.colors{
+    margin-top: 20px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+.blue{
+    background-color:rgb(101, 101, 238);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.black{
+    background-color: black;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.pink{
+    background-color: rgb(243, 84, 110);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 
 .rectangle h2 {
-    width: 25%;
     font-weight: bolder;
     font-size: 3rem;
-    position: absolute;
-    top: 100px;
-    right: 400px;
+   
+}
+.rectangle p {
+    font-weight: 500;
+    font-size: 1.5rem;
+ 
 }
 
 .rectangle img {
@@ -319,6 +376,13 @@ button p {
   justify-content: space-between;
 }
 
+.title{
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 30px;
+}
+
 
 .card {
     align-items: center;
@@ -339,11 +403,38 @@ button p {
 }
 
 .card img {
-    height: 280px;
-    width: 250px;
+    height: 260px;
+    width: 240px;
+}
+.card h2{
+    margin-bottom: 7px;
 }
 .card p{
     font-weight: 400;
+}
+.card button{
+    background-color:black;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+
+    
+}
+.card button:hover{
+    background-color:black;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+
+    
+}
+.card button a{
+    color: white;
+    text-decoration: none;
 }
 
 .cars {
@@ -496,9 +587,9 @@ button p {
 /*ends*/
 /*popup for sign up*/
 .popup2 {
-    margin: 160px auto;
+    margin: 140px auto;
     width: 380px;
-    height: 500px;
+    height: 470px;
     padding: 20px 30px;
     background: white;
     box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
@@ -507,6 +598,7 @@ button p {
         opacity 200ms ease-in-out 0ms,
         transform 20ms ease-in-out 0ms;
 }
+
 
 
 
@@ -638,7 +730,7 @@ button p {
 }
 
 .carform h2 span {
-    color: #ed5506;
+    color: black;
 }
 
 .pr {

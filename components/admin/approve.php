@@ -10,7 +10,7 @@ if (isset($_GET['approveid'])) {
     ";
     $res2 = mysqli_query($conn, $sql2);
     if($res2){
-        header("location:./bookings.php");
+        header("location:./orders.php");
 
     }
   

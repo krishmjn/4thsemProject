@@ -13,7 +13,7 @@ if (isset($_GET['deleteid'])) {
     $data = mysqli_query($conn, $sql);
     if ($data) {
         echo "Deleted";
-        header("location:./bookings.php");
+        header("location:./orders.php");
     } else {
         die("Connection failed " . mysqli_connect_error());
     }

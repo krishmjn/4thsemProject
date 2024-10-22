@@ -16,15 +16,13 @@ include "./header.php"
             <a href="./index.php">
                 <li>Home</li>
             </a>
-            <a href="./signin.php">
+            <a href="./collections.php">
                 <li>Collections</li>
             </a>
-            <a href="./index.php">
+            <a href="./about.php">
                 <li>About Us</li>
             </a>
-            <a href="./signin.php">
-                <li>Contact</li>
-            </a>
+          
 
         </ul>
     </div>

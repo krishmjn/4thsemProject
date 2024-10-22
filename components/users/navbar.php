@@ -13,9 +13,14 @@ include "../connection.php";
     <div class="list">
         <ul>
             <li><a href="./users_home.php">Home</a></li>
-            <li><a target="_blank" href="./carlisting.php">Collections</a></li>
-            <li><a href="./users_home.php">About Us</a></li>
-            <li><a target="_blank" href="./carlisting.php">Contact</a></li>
+            <li><a  href="./collections.php">Collections</a>
+            <ul class="dropdown-menu">
+            <li><a href="./backpacks.php">Backpacks</a></li>
+            <li><a href="./hip.php">Hip Packs</a></li>
+            <li><a href="./totes.php">Totes</a></li>
+        </ul>
+        </li>
+            <li><a href="../about.php">About Us</a></li>
         </ul>
     </div>
 
@@ -29,7 +34,9 @@ include "../connection.php";
         </button>
         <div class="dropdown-content">
             <a href="./profile.php">Profile</a>
+            <a href="./cart.php">Cart</a>
             <a href="./logout.php">Logout</a>
+
         </div>
 
 </nav>

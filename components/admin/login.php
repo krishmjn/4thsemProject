@@ -13,7 +13,7 @@ if (!empty($_POST)) {
         echo $student;
         $_SESSION['name'] = $row['full_name'];
         $_SESSION['is_login'] = true;
-        $_SESSION['id'] = $row['id'];
+        $_SESSION['admin_id'] = $row['id'];
 
         echo "successfull";
         header("location:./index.php");
@@ -30,7 +30,7 @@ if (!empty($_POST)) {
 <div class="popup1">
 
     <form action="" method="post">
-        <h2><span>RENTNOW</span><br />CARRENTAL</h2>
+        <h2><span>JHOLA</h2>
         <br /><br />
 
         <label for="Email">Email Address</label>

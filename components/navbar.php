@@ -16,13 +16,12 @@ include "./header.php";
     <li class="dropdown">
         <a href="./collections.php" class="coll">Collections</a>
         <ul class="dropdown-menu">
-            <li><a href="./collections.php">Backpacks</a></li>
-            <li><a href="./collections.php">Hip Packs</a></li>
-            <li><a href="./collections.php">Totes</a></li>
+            <li><a href="./backpacks.php">Backpacks</a></li>
+            <li><a href="./hip.php">Hip Packs</a></li>
+            <li><a href="./totes.php">Totes</a></li>
         </ul>
     </li>
-    <li><a href="./index.php">About Us</a></li>
-    <li><a href="./signin.php">Contact</a></li>
+    <li><a href="./about.php">About Us</a></li>
 </ul>
 
     </div>

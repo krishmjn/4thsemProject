@@ -9,92 +9,65 @@ if (!isset($_SESSION['is_login'])) {
 ?>
 
 <div class="des">
+<div class="carousel-container">
+  <div class="carousel-slide">
+    <img src="../../icons/jhola/backpacks/boulder-mocha.jpg" alt="Boulder Mocha Bag" height="600px" width="500px">
+    <img src="../../icons/jhola/totes/brown_tote.jpg" alt="Another Bag" height="600px" width="500px">
+    <img src="../../icons/jhola/Hip Packs/blue_white.jpg" alt="Yet Another Bag" height="600px" width="500px">
+  </div>
+</div>
+   
+    
     <div class="rectangle">
-        <img src="../../icons/Rectangle 4.png" alt="">
-        <h2>"Hit the road with ease! <br> Find <br>your perfect ride today." </h2>
-    </div>
-    <div class="image">
-        <img src="../../icons/pngwing 1.png" alt="">
+        <h2>"Carry Style, Carry Confidence." </h2>
     </div>
 </div>
 
-<div class="clist">
-    <div class="lt">
-        <img src="../../icons/left triangle.png" alt="">
-    </div>
-    <div class="company">
-        <img src="../../icons/company name/Group 1.png" alt="">
-    </div>
-    <div class="rt">
-        <img src="../../icons/right triangle.png" alt="">
-    </div>
-</div>
-
-<div class="carDeals">
-
-    <div class="cards" id="Cards">
-
-
-        <?php
-        $sql = "SELECT * FROM car";
+<div class="collections">
+    <div class="cards">
+    <?php
+        $sql = "SELECT * FROM bags";
         $data = mysqli_query($conn, $sql);
         while ($result = mysqli_fetch_assoc($data)) :
 
         ?>
-            <div class="card">
-                <h3><?= $result['car_name'] ?></h3>
-                <img src="../admin/uploads/<?= $result['image'] ?>" alt="">
-                <div class="features">
-                    <!-- Fuel litre  -->
-                    <div class="fl">
-                        <img src="../../icons/Features/GasPump.png" alt="">
-                        <p><?= $result['fuel_capacity'] ?></p>
-                    </div>
-                    <!-- transmission type  -->
-                    <div class="tt">
-                        <img src="../../icons/Features/SteeringWheel.png" alt="">
-                        <p><?= $result['transmission_type'] ?></p>
-                    </div>
-                    <!-- seat capacity  -->
-                    <div class="sc">
-                        <img src="../../icons/Features/UsersThree.png" alt="">
-                        <p><?= $result['seat_capacity'] ?></p>
-                    </div>
-                </div>
-
-                <div class="details">
-                    <div class="rate">
-                        <p><?= $result['rate'] ?></p>
-                        <p>Rate per day</p>
-                    </div>
-                    <!-- rent button  -->
-                    <div class="rb">
-                        <?php
-                        if ($result['is_book']) {
-                        ?>
-                            <!-- <button disabled class="rent"><a href=" ">Not Available</a></button> -->
-                            <a href=""><button disabled>Not Available</button></a>
-                        <?php
-                        }
-                        ?> <?php
-                            if (!$result['is_book']) {
-                            ?>
-                            <button class="rent"><a href="./rent.php?carname=<?= $result['car_name'] ?>&carid=<?= $result['car_id']; ?>">Rent Now</a></button>
-                        <?php
-                            }
-                        ?>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="card" >
+            <img src="../admin/uploads/<?= $result['image'] ?>" alt="" >
+            <h2><?= $result['name'] ?></h2>
+            <p style="display: inline-block;font-weight: bold;">Rs.<?= $result['price'] ?></p>
+            <?php if ($result['stock'] > 0) : ?>
+                <button><a href="./rent.php?id=<?= $result['id'] ?>">Add to cart</a></button>
+            <?php else : ?>
+                <span style="color: red; font-weight: bold;">Out of Stock</span>
+            <?php endif; ?>
+        </div>
         <?php endwhile; ?>
 
+       
+     
     </div>
-
-
 </div>
-<button class="vmr">
-    <a target="_blank" href="./carlisting.php"> View More Car</a>
-</button>
+<script>
+  const slideContainer = document.querySelector('.carousel-slide');
+  const slides = document.querySelectorAll('.carousel-slide img');
+
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+
+  function autoSlide() {
+    currentIndex++;
+    if (currentIndex >= totalSlides) {
+      currentIndex = 0;
+    }
+    slideContainer.style.transform = `translateX(${-currentIndex * 500}px)`; // 500px is the width of each image
+  }
+
+  setInterval(autoSlide, 3000); // Slide every 3 seconds
+</script>
+
+
+
 <?php
 include "./end.php";
 include "./footer.php"

@@ -4,7 +4,7 @@ include "./header.php"
 ?>
 <nav>
     <div class="logo">
-        <a href="./index.php"><img src="../../icons/company name/logo.svg" height="100px" width="180px" alt=""></a>
+        <a href="./index.php"><img src="../../icons/company name/logo.svg" height="60px" width="150px" alt=""></a>
 
         <!-- <h3>CARRENTAL</h3> -->
     </div>
@@ -13,8 +13,8 @@ include "./header.php"
         <ul>
             <li><a href="./index.php">Home</a></li>
             <li><a href="./users.php">Users</a></li>
-            <li><a href="./cars.php">Cars</a></li>
-            <li><a href="./bookings.php">Bookings</a></li>
+            <li><a href="./bags.php">Bags</a></li>
+            <li><a href="./orders.php">Orders</a></li>
         </ul>
     </div>
 
