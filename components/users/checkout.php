@@ -85,9 +85,9 @@ $signature_base64 = base64_encode($signature); // Base64 encode if needed
     <input type="hidden" id="product_code" name="product_code" value="EPAYTEST" required>
     <input type="hidden" id="product_service_charge" name="product_service_charge" value="0" required>
     <input type="hidden" id="product_delivery_charge" name="product_delivery_charge" value="0" required>
-    <input type="hidden" id="success_url" name="success_url" value="http://localhost/jhola/project/components/users/payment_success.php" required>
+    <input type="hidden" id="success_url" name="success_url" value="http://localhost/4thsemproject/components/users/payment_success.php" required>
     
-    <input type="hidden" id="failure_url" name="failure_url" value="http://localhost/jhola/project/components/users/payment_fail.php" required>
+    <input type="hidden" id="failure_url" name="failure_url" value="http://localhost/4thsemproject/components/users/payment_fail.php    " required>
     <input type="hidden" id="signed_field_names" name="signed_field_names" value="total_amount,transaction_uuid,product_code" required>
     <input type="hidden" id="signature" name="signature" value="<?= htmlspecialchars($signature_base64); ?>" required>
     <img src="../../icons/images.png" alt="" height="70px" width="150px" style="display: inline-block;margin-left: 80px;">

@@ -19,9 +19,9 @@ include "../connection.php";
             <li><a href="./hip.php">Hip Packs</a></li>
             <li><a href="./totes.php">Totes</a></li>
         </ul>
-        </li>
+        <!-- </li>
             <li><a href="../about.php">About Us</a></li>
-        </ul>
+        </ul> -->
     </div>
 
     <!-- <div class="dropdown">

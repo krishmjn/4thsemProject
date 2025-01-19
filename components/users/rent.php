@@ -124,6 +124,11 @@
 
                         <p><?= $result['fabric'] ?></p>
                     </div>
+                     <div class="det">
+                <label for="">Stock available : </label>
+
+                        <p><?= $result['stock'] ?></p>
+                    </div>
                 </div>
                 <div class="carts">
                 <button class="add" id="add">+</button>
